@@ -2,11 +2,12 @@
 	padding: 0px; margin: 0px; box-sizing: border-box;
 }
 body, html {
-	max-height: 100%;
-	width: 100%;
+	height: 100vh;
+	width: 100vw;
 }
 .container {
 	display: grid;
+	height: 100%;
 	grid-template-columns: 50px auto;
 	grid-template-areas: "aside main";
 }
@@ -27,8 +28,7 @@ figure {
 	width: 10px;
 	height: 10px;
 	background: #57c6b5;
-	border-radius: 50%
-
+	border-radius: 50%;
 }
 .header img {
 	width: 80%;
@@ -54,12 +54,10 @@ figure {
 	margin: 5px;
 	height: 40px;
 	width: 40px;
-
 }
 button {
 	height: 40px;
 	width: 40px;
-
 }
 i {
 	color: #9c9da1
@@ -80,23 +78,16 @@ i {
 	grid-template-columns: 0.2fr 3fr 0.2fr 1fr;
 	grid-template-areas: ". left-part . right-part";
 	border-left: 7px solid #f0f1f2;
-
 }
 .left-part {
 	grid-area: left-part;
 	display: grid;
 	grid-template-rows: 1fr 1fr 6fr;
 }
-
-/*Acá empieza toda la parte de arriba*/
-
 .top {
 	display: flex;
 	justify-content: space-between;
-
 }
-
-/* arriba a la izquierda*/
 .left-top {
 	display: flex;
 	justify-content: space-between;
@@ -111,16 +102,14 @@ i {
 .menu {
 	display: flex;
 	align-items: center;
-}
-.menu li {
+}.menu li {
 	list-style: none;
 	margin-right: 30px;
 	text-align: center;
 }
 .general, .documents, .notes, .dot {
 	font-family: verdana;
-}
-.dot {
+}.dot {
 	margin-bottom: 5px;
 }
 .link:link {
@@ -137,11 +126,7 @@ i {
 }
 .link:active {
 	color: none;
-}
-
-/* arriba a la derecha */
-
-.right-top {
+}.right-top {
 	display: flex;
 	flex-direction: row-reverse;
 	align-items: center;
@@ -162,16 +147,10 @@ i {
 	background-color: #adc9c4;
 	cursor: pointer;
 }
-
-/*Acá termina la parte de arriba y comienza la del medio*/
-
 .mid {
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-
-}
-.alldoc {
 
 }
 .ledit-in {
@@ -189,21 +168,16 @@ i {
 	color: #74757a;
 	padding-left: 10px;
 }
-
-/*Acá termina la parte del medio y comienza la de abajo*/
-
 .bot {
 	background-color: #f4f5f7;
 	display: grid;
-	grid-template-columns: repeat(3, 1fr);
+	grid-template-columns: repeat(3, 20vw);
 	grid-template-rows: 1fr repeat(2, 2fr);
-	grid-row-gap: 20px;
-	grid-column-gap: 30px;
+	grid-gap: 40px;
 	justify-content: space-between;
 	align-items: stretch;
 	margin-top: 10px;
-	margin-bottom: 10px;
-
+	margin-bottom: 30px;
 }
 .cell {
 	display: flex;
@@ -228,6 +202,8 @@ i {
 .cell:nth-child(5) {
 	background-image: url(http://lorempixel.com/400/400/cats);
 	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
 }
 .cell:nth-child(6) video {
 	height: 100%;
@@ -262,7 +238,6 @@ i {
 	background-color: #ffffff;
 	cursor: pointer;
 }
-
 .right-part {
 	grid-area: right-part;
 	background-color: #ffffff;
@@ -271,7 +246,9 @@ i {
 }
 .aside {
 	display: grid;
-	grid-template-rows: 1fr 2.5fr;
+	grid-template-rows: 0.5fr 2.5fr;
+	align-content: start;
+	height: 100%;
 }
 .aside img {
 	width: 100%;
@@ -279,37 +256,42 @@ i {
 	box-shadow: -10px 11px 12px 0px rgba(230,230,230,1);
 }
 .movement {
-	display: flex;
-	flex-direction: column;
-	justify-content: space-around;
+	display: grid;
+	grid-template-rows: 0.5fr 0.3fr auto 1fr;
 }
 .balance{
 	flex-flow: 1 1 auto;
 	display: flex;
 	justify-content: space-between;	
-	border-bottom: 2px solid #dadbdd;
 	font-family: verdana;
 	color: #6a6a6a;
-	margin: 10px;
-	padding-bottom: 10px;
+	font-size: 0.8em;
+	padding: 10px;
+	margin-left: 5px;
+	margin-right: 5px;
+	border-bottom: 2px solid #dadbdd;
+
 }
-.names {
+.index {
 	display: flex;
 	justify-content: space-between;
 	font-family: verdana;
-	color: #6a6a6a;	
-	margin-left: 10px;
- 	margin-right: 10px;
+	font-size: 0.9em;
+	color: #6a6a6a;
+	padding: 10px;
+	margin-left: 5px;
+	margin-right: 5px;
 }
 .activity {
-	flex-flow: 3 1 auto;
 	display: grid;
 	grid-template-columns: 1fr 4fr 1fr;
-	grid-template-rows: repeat(5, 50px);
-	border-bottom: 2px solid #dadbdd;
+	grid-template-rows: repeat(5, 40px);
 	font-family: verdana;
-	color: #6a6a6a;	
-	margin: 10px;
+	color: #6a6a6a;
+	padding: 10px;
+	border-bottom: 2px solid #dadbdd;
+	margin-left: 5px;
+	margin-right: 5px;
 }
 .name {
 	font-size: 0.8em;
@@ -323,19 +305,25 @@ i {
  .up, .down {
  	text-align: right;
  }
- .up{
- 	color: #1CC691;
- }
-.down {
-	color: #da6a80;
-}
+  .up {
+  	color: #1CC691;
+  }
+  .down {
+  	color: #da6a80;
+  }
 .autopay {
 	display: flex;
 	flex-direction: column;
 	flex-flow: 1 1 auto;
 	font-family: verdana;
 	color: #6a6a6a;
-	margin-left: 10px;
+	padding: 5px;
+	margin-left: 5px;
+	margin-right: 5px;
+}
+.autopay p {
+	font-size: 0.8em;
+	padding: 5px;
 }
 .lock {
 	position: relative;
